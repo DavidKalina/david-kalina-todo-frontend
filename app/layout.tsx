@@ -1,3 +1,4 @@
+import PageBanner from "@/components/PageBanner";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -24,10 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <div className="bg-[#1a1a1a] min-w-screen min-h-screen">
+          <PageBanner />
+          <div className="max-w-3xl flex flex-col space-y-12 justify-center mx-auto">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
