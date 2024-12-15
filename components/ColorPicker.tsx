@@ -4,6 +4,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
+export type ColorOption =
+  | "blue"
+  | "red"
+  | "orange"
+  | "yellow"
+  | "green"
+  | "indigo"
+  | "purple"
+  | "pink"
+  | "brown"
+  | undefined;
+
 const colorVariants = {
   red: "bg-red-500 hover:bg-red-600",
   orange: "bg-orange-500 hover:bg-orange-600",
