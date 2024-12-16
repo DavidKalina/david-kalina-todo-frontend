@@ -24,7 +24,7 @@ const PageBanner = () => {
         <span className="text-[#5E60CE] text-[40px] font-[900]">App</span>
 
         {/* Button wrapper to maintain layout */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-xs md:max-w-3xl">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-xs md:max-w-xl">
           {isHomePage && (
             <IconButton
               onClick={() => push("/create-task")}

@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="bg-[#1a1a1a] min-w-screen min-h-screen flex flex-col">
           <PageBanner />
-          <div className="max-w-xs md:max-w-3xl flex flex-col space-y-12 justify-center mx-auto -mt-4 w-full pt-20">
+          <div className="max-w-xs md:max-w-xl flex flex-col space-y-12 justify-center mx-auto -mt-4 w-full pt-20">
             {children}
           </div>
         </div>
