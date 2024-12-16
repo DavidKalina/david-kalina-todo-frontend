@@ -109,3 +109,22 @@ export async function toggleTaskCompletion(id: string, completed: boolean) {
     };
   }
 }
+
+export async function deleteTask(id: string) {
+  try {
+    const response = await fetch(`http://localhost:3001/api/tasks/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to update task");
+    }
+
+    revalidatePath("/");
+    return { success: true };
+  } catch {
+    return {
+      error: `Failed to delete task ${id}`,
+    };
+  }
+}

@@ -1,6 +1,7 @@
 "use client";
 
-import { toggleTaskCompletion } from "@/app/actions/task";
+import { deleteTask, toggleTaskCompletion } from "@/app/actions/task";
+import { Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -19,6 +20,10 @@ const Task = ({ id, title, color, completed }: TaskProps) => {
     setIsUpdating(true);
     await toggleTaskCompletion(id, !completed);
     setIsUpdating(false);
+  }
+
+  async function handleDeleteTask() {
+    await deleteTask(id);
   }
 
   return (
@@ -45,21 +50,11 @@ const Task = ({ id, title, color, completed }: TaskProps) => {
         {title}
       </p>
 
-      <button className="opacity-0 transition-opacity group-hover:opacity-100">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-4 w-4 text-zinc-500 hover:text-zinc-400"
-        >
-          <path d="M3 6h18" />
-          <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
-          <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
-        </svg>
+      <button
+        className="opacity-0 transition-opacity group-hover:opacity-100"
+        onClick={handleDeleteTask}
+      >
+        <Trash />
       </button>
     </div>
   );
