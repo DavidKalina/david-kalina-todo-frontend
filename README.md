@@ -206,6 +206,8 @@ describe("Button", () => {
 ### 6. Additional Enhancements
 
 - Add animations and transitions
+- Eager UI updates
+- Caching
 - Create loading states and skeletons
 - Implement error boundaries
 - Improve accessibility
