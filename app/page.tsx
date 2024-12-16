@@ -1,5 +1,5 @@
-import TaskList from "@/components/TaskList";
+import TaskListWrapper from "@/components/TaskListWrapper";
 
 export default function Home() {
-  return <TaskList />;
+  return <TaskListWrapper />;
 }
