@@ -58,7 +58,7 @@ const Task = ({ id, title, color, completed }: TaskProps) => {
         </div>
 
         <button
-          className="opacity-0 transition-opacity group-hover:opacity-100 flex-shrink-0 flex items-center"
+          className="md:opacity-0 transition-opacity md:group-hover:opacity-100 flex-shrink-0 flex items-center"
           onClick={() => setIsDeleting(true)}
         >
           <TrashIcon />
