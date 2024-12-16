@@ -13,8 +13,13 @@ export default async function TaskList() {
   return (
     <div>
       <div className="flex justify-between mb-4">
-        <TextWithBadge text="Tasks" count={summary.total} />
-        <TextWithBadge text="Completed" count={summary.completed} />
+        <TextWithBadge className="text-[#4EA8DE] font-[700]" text="Tasks" count={summary.total} />
+        <TextWithBadge
+          className="text-[#8284FA] font-[700]"
+          text="Completed"
+          total={summary.total}
+          count={summary.completed}
+        />
       </div>
       <div className="max-h-[600px] overflow-y-auto space-y-6">
         {tasks.map((task) => (

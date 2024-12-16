@@ -32,19 +32,20 @@ export default function CreateTaskForm() {
 
   return (
     <form action={handleSubmit} className="flex flex-col space-y-8">
-      <div>
-        <NavToHomePage />
-        <Text className="text-[#4ea8de] font-bold mb-2">Title</Text>
+      <NavToHomePage />
+      <div className="space-y-4">
+        <Text>Title</Text>
         <Input
+          autoFocus
           name="title"
           placeholder="Ex: Brush your teeth"
-          className="bg-[#262626] border-[#333]"
+          className="bg-[#262626] border-[#333] text-[#F2F2F2]"
           required
         />
       </div>
 
-      <div>
-        <Text className="text-[#4ea8de] font-bold mb-2">Color</Text>
+      <div className="space-y-4">
+        <Text>Color</Text>
         <input type="hidden" name="color" value={color} />
         <ColorPicker
           selectedColor={color as ColorOption}
@@ -59,7 +60,7 @@ export default function CreateTaskForm() {
         disabled={isPending}
         iconPosition="trailing"
         text={isPending ? "Creating..." : "Add Task"}
-        className="text-white bg-[#1E6F9F] rounded-[8px] text-xl p-6"
+        className="text-white bg-[#1E6F9F] rounded-[8px] text-[14px] h-[20px] font-[700] p-6 w-full -mt-12"
         icon="PlusCircle"
       />
     </form>

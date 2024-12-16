@@ -8,6 +8,7 @@ import type { Task } from "@/lib/tasks";
 import ColorPicker, { ColorOption } from "@/components/ColorPicker";
 import { IconButton } from "@/components/IconButton";
 import { updateTask } from "@/app/actions/task";
+import NavToHomePage from "@/components/NavToHomePage";
 
 interface UpdateTaskFormProps {
   task: Task;
@@ -36,19 +37,20 @@ export default function UpdateTaskForm({ task }: UpdateTaskFormProps) {
 
   return (
     <form action={handleSubmit} className="flex flex-col space-y-8">
-      <div>
-        <Text className="text-[#4ea8de] font-bold mb-2">Title</Text>
+      <NavToHomePage />
+      <div className="space-y-4">
+        <Text>Title</Text>
         <Input
           name="title"
           defaultValue={task.title}
           placeholder="Task title"
-          className="bg-[#262626] border-[#333]"
+          className="bg-[#262626] border-[#333] text-[#F2F2F2]"
           required
         />
       </div>
 
-      <div>
-        <Text className="text-[#4ea8de] font-bold mb-2">Color</Text>
+      <div className="space-y-4">
+        <Text>Title</Text>
         <input type="hidden" name="color" value={color} />
         <ColorPicker
           selectedColor={color as ColorOption}
@@ -58,23 +60,14 @@ export default function UpdateTaskForm({ task }: UpdateTaskFormProps) {
 
       {error && <div className="text-red-500 text-sm">{error}</div>}
 
-      <div className="flex gap-4">
-        <IconButton
-          type="button"
-          onClick={() => router.back()}
-          text="Cancel"
-          className="text-white bg-gray-600 rounded-[8px] text-xl p-6 flex-1"
-          icon="X"
-        />
-        <IconButton
-          type="submit"
-          disabled={isPending}
-          iconPosition="trailing"
-          text={isPending ? "Updating..." : "Update Task"}
-          className="text-white bg-[#1E6F9F] rounded-[8px] text-xl p-6 flex-1"
-          icon="Save"
-        />
-      </div>
+      <IconButton
+        type="submit"
+        disabled={isPending}
+        iconPosition="trailing"
+        text="Save"
+        className="text-white bg-[#1E6F9F] rounded-[8px] text-[14px] h-[20px] font-[700] p-6 w-full -mt-12"
+        icon="Check"
+      />
     </form>
   );
 }

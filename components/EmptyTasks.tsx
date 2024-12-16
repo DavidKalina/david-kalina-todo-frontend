@@ -1,5 +1,5 @@
-import { Clipboard } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ClipboardIcon from "./ClipboardIcon";
 
 const EmptyTasks = ({ className }: { className?: string }) => {
   return (
@@ -9,11 +9,12 @@ const EmptyTasks = ({ className }: { className?: string }) => {
         className
       )}
     >
-      <Clipboard className="w-16 h-16 text-gray-600 mb-4" strokeWidth={1} />
-      <h2 className="text-2xl font-semibold text-gray-300">
-        You don&apos;t have any tasks registered yet.
-      </h2>
-      <p className="text-gray-500 text-lg">Create tasks and organize your to-do items.</p>
+      <ClipboardIcon />
+      <p className="text-[16px] text-[#808080] font-[400] text-left flex flex-col gap-[2px]">
+        <strong>You don&apos;t have any tasks registered yet.</strong>
+        <br />
+        Create tasks and organize your to-do items.
+      </p>
     </div>
   );
 };

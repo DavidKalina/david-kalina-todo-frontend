@@ -29,11 +29,11 @@ const colorVariants = {
 };
 
 const colorPickerVariants = cva(
-  "w-12 h-12 rounded-full transition-transform duration-200 cursor-pointer ring-offset-2",
+  "w-[28px] h-[28px] md:w-[52px] md:h-[52px] rounded-full transition-transform duration-200 cursor-pointer ring-offset-2",
   {
     variants: {
       selected: {
-        true: "ring-2 ring-white scale-110",
+        true: "ring-[2px] ring-white scale-100",
         false: "hover:scale-105",
       },
     },
@@ -62,6 +62,7 @@ const ColorPicker = ({ className, onColorSelect, selectedColor, ...props }: Colo
     <div className="flex gap-2" {...props}>
       {Object.entries(colorVariants).map(([color, classes]) => (
         <button
+          type="button"
           key={color}
           onClick={() => handleColorSelect(color as keyof typeof colorVariants)}
           className={cn(
