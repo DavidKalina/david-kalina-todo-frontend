@@ -2,12 +2,15 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const response = await fetch("http://localhost:3001/api/tasks", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      cache: "no-store",
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3001"}/api/tasks`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "no-store",
+      }
+    );
 
     if (!response.ok) {
       throw new Error("Failed to fetch tasks");

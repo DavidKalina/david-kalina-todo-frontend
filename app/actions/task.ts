@@ -2,9 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 
+const BASE_URL = process.env.API_BASE_URL ?? "http://localhost:3001";
+
 export async function getTask(id: string) {
   console.log({ id });
-  const response = await fetch(`http://localhost:3001/api/tasks/${id}`, {
+  const response = await fetch(`${BASE_URL}/api/tasks/${id}`, {
     cache: "no-store",
   });
 
@@ -26,7 +28,7 @@ export async function createTask(formData: FormData) {
   }
 
   try {
-    const response = await fetch("http://localhost:3001/api/tasks", {
+    const response = await fetch(`${BASE_URL}/api/tasks`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -61,7 +63,7 @@ export async function updateTask(id: string, formData: FormData) {
   }
 
   try {
-    const response = await fetch(`http://localhost:3001/api/tasks/${id}`, {
+    const response = await fetch(`${BASE_URL}/api/tasks/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -87,7 +89,7 @@ export async function updateTask(id: string, formData: FormData) {
 
 export async function toggleTaskCompletion(id: string, completed: boolean) {
   try {
-    const response = await fetch(`http://localhost:3001/api/tasks/${id}`, {
+    const response = await fetch(`${BASE_URL}/api/tasks/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -112,7 +114,7 @@ export async function toggleTaskCompletion(id: string, completed: boolean) {
 
 export async function deleteTask(id: string) {
   try {
-    const response = await fetch(`http://localhost:3001/api/tasks/${id}`, {
+    const response = await fetch(`${BASE_URL}/api/tasks/${id}`, {
       method: "DELETE",
     });
 

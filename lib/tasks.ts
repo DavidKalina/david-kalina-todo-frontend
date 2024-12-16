@@ -15,8 +15,10 @@ export type TasksResponse = {
   };
 };
 
+const BASE_URL = process.env.API_BASE_URL ?? "http://localhost:3001";
+
 export async function getTasks(): Promise<TasksResponse> {
-  const response = await fetch("http://localhost:3001/api/tasks", {
+  const response = await fetch(`${BASE_URL}/api/tasks`, {
     headers: {
       "Content-Type": "application/json",
     },
