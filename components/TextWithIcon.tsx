@@ -3,8 +3,9 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import type { LucideProps } from "lucide-react";
 
-// Exclude non-icon exports from Lucide
 type IconName = Exclude<keyof typeof LucideIcons, "createLucideIcon" | "default">;
+
+// TODO Flesh out variants.
 
 const textWithIconVariants = cva("flex items-center gap-2 font-bold", {
   variants: {

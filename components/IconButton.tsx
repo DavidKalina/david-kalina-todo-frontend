@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils";
 import type { LucideProps } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 
-// Only include the actual icon components
+// TODO Create a more flexible button component that accepts children for SVGs pulled from Figma.
+
 type IconName = Exclude<keyof typeof LucideIcons, "createLucideIcon" | "default">;
 
 interface IconButtonProps extends Omit<ButtonProps, "children"> {

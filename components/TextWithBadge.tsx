@@ -2,6 +2,8 @@ import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
+// TODO Flesh out variants.
+
 const textWithBadgeVariants = cva("flex items-center gap-2 font-medium", {
   variants: {
     variant: {

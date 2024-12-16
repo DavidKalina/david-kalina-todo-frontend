@@ -1,6 +1,8 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
+// TODO Flesh out variants.
+
 const textVariants = cva(
   // Base styles that apply to all variants
   "font-bold text-sm", // text-sm is 14px in Tailwind
