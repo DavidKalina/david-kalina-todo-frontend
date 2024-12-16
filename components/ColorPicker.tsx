@@ -33,7 +33,7 @@ const colorPickerVariants = cva(
   {
     variants: {
       selected: {
-        true: "ring-[2px] ring-white scale-100",
+        true: "ring-[0.5px] ring-white scale-100",
         false: "hover:scale-105",
       },
     },

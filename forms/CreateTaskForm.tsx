@@ -33,7 +33,7 @@ export default function CreateTaskForm() {
   return (
     <form action={handleSubmit} className="flex flex-col space-y-8">
       <NavToHomePage />
-      <div className="space-y-4">
+      <div className="space-y-2">
         <Text>Title</Text>
         <Input
           autoFocus
@@ -44,7 +44,7 @@ export default function CreateTaskForm() {
         />
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-2">
         <Text>Color</Text>
         <input type="hidden" name="color" value={color} />
         <ColorPicker
@@ -60,7 +60,7 @@ export default function CreateTaskForm() {
         disabled={isPending}
         iconPosition="trailing"
         text={isPending ? "Creating..." : "Add Task"}
-        className="text-white bg-[#1E6F9F] rounded-[8px] text-[14px] h-[20px] font-[700] p-6 w-full -mt-12"
+        className="text-white bg-[#1E6F9F] rounded-[8px] text-[14px] h-[20px] font-[700] p-6 w-full"
         icon="PlusCircle"
       />
     </form>

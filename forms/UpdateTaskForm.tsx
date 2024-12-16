@@ -38,7 +38,7 @@ export default function UpdateTaskForm({ task }: UpdateTaskFormProps) {
   return (
     <form action={handleSubmit} className="flex flex-col space-y-8">
       <NavToHomePage />
-      <div className="space-y-4">
+      <div className="space-y-2">
         <Text>Title</Text>
         <Input
           name="title"
@@ -49,8 +49,8 @@ export default function UpdateTaskForm({ task }: UpdateTaskFormProps) {
         />
       </div>
 
-      <div className="space-y-4">
-        <Text>Title</Text>
+      <div className="space-y-2">
+        <Text>Color</Text>
         <input type="hidden" name="color" value={color} />
         <ColorPicker
           selectedColor={color as ColorOption}
@@ -65,7 +65,7 @@ export default function UpdateTaskForm({ task }: UpdateTaskFormProps) {
         disabled={isPending}
         iconPosition="trailing"
         text="Save"
-        className="text-white bg-[#1E6F9F] rounded-[8px] text-[14px] h-[20px] font-[700] p-6 w-full -mt-12"
+        className="text-white bg-[#1E6F9F] rounded-[8px] text-[14px] h-[20px] font-[700] p-6 w-full"
         icon="Check"
       />
     </form>
